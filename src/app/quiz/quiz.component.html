@@ -1,5 +1,8 @@
 <section>
-  <h2 class="quiz_title">C'est parti {{ playerName }}, soit prêt !</h2>
+  <h2 class="quiz_title">C'est parti {{ playerName }}, choisit ta selection et soit prêt !</h2>
+  <section>
+    <app-search-bar></app-search-bar>
+  </section>
   <section class="quiz_reset" *ngIf="isQuizFinished">
     <h3>You can see your answers</h3>
     <button class="btn--outline">Reset</button>
