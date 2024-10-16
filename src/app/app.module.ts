@@ -28,7 +28,7 @@ import { SearchBarComponent } from './quiz/search-bar/search-bar.component';
     AnswerComponent,
     LoginComponent,
     RegisterComponent,
-    CategoriesComponent
+    CategoriesComponent,
     SearchBarComponent
   ],
   imports: [
