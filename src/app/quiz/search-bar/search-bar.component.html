@@ -1,4 +1,9 @@
-<label for="site-search">Search categorie:</label>
-<input type="search" id="site-search" name="q" />
+<div>
+    <input type="text" (input)="handleInput($event)" placeholder="Rechercher..." />
+  </div>
+  
+  <div>
 
-<button>Search</button>
+    <button *ngIf="showButton1">Bouton 1</button>
+    <button *ngIf="showButton2">Bouton 2</button>
+  </div>
