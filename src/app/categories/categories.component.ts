@@ -9,20 +9,16 @@ import { CategoriesService } from './categories.service';
 export class CategoriesComponent implements OnInit {
   categories: string[] = [];
 
-  constructor(private categoriesService: CategoriesService) { }
+  constructor(private categoriesService: CategoriesService) {}
 
   ngOnInit(): void {
-    this.loadCategories();
-  }
-
-  loadCategories(): void {
     this.categoriesService.getCategories().subscribe(
-      (data: string[]) => {
-        this.categories = data;
-        console.log('Catégories récupérées:', this.categories);
+      (categories: string[]) => {
+        console.log('Categories retrieved:', categories); 
+        this.categories = categories; 
       },
       (error) => {
-        console.error('Erreur lors de la récupération des catégories', error);
+        console.error('Error retrieving categories:', error); 
       }
     );
   }

@@ -7,13 +7,16 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class CategoriesService {
-  private apiUrl = 'http://localhost:3000/categories'; 
+  private apiUrl = 'http://localhost:3000/questions';  
 
   constructor(private http: HttpClient) { }
 
   getCategories(): Observable<string[]> {
-    return this.http.get<any>(this.apiUrl).pipe(
-      map((categories: any) => Object.keys(categories)) 
+    return this.http.get<any[]>(this.apiUrl).pipe(
+      map(questions => {
+        const categoriesSet = new Set(questions.map(question => question.categorie));
+        return Array.from(categoriesSet); 
+      })
     );
   }
 }
